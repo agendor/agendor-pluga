@@ -1,0 +1,112 @@
+{
+  "name": {
+    "pt_BR": "Negócio ganho",
+    "en": "Deal won"
+  },
+  "trigger_key": "deal_won",
+  "description": {
+    "pt_br": "Para cada negócio marcado como ganho",
+    "en": "For each deal marked as won"
+  },
+  "filters": [
+    [{"field": "dealStatus.dealStatusId",
+      "condition": "equal",
+      "value": "2"
+    }]
+  ],
+  "trigger_fields": {
+    "type": "local",
+    "fields": [
+      {
+        "key": "title",
+        "name": {
+          "pt_BR": "Título",
+          "en": "Title"
+        },
+        "description": {
+          "pt_BR": "Título do pagamento",
+          "en": "Deal's title"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "organization.name",
+        "name": {
+          "pt_BR": "Empresa",
+          "en": "Organization"
+        },
+        "description": {
+          "pt_BR": "Nome da empresa que o negócio pertence",
+          "en": "Organization's name related to the deal"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "person.name",
+        "name": {
+          "pt_BR": "Pessoa",
+          "en": "Person"
+        },
+        "description": {
+          "pt_BR": "Nome da pessoa que o negócio pertence",
+          "en": "Persons's name related to the deal"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "dealStage.name",
+        "name": {
+          "pt_BR": "Etapa",
+          "en": "Stage"
+        },
+        "description": {
+          "pt_BR": "Nome da etapa que o negócio está no Funil de Vendas",
+          "en": "Stage's name in the sales pipeline"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "dealStatus.name",
+        "name": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "description": {
+          "pt_BR": "Se o negócio está ganho, perdido ou em andamento",
+          "en": "If the deal is won, lost or in progress"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "userOwner.name",
+        "name": {
+          "pt_BR": "Usuário responsável",
+          "en": "User owner"
+        },
+        "description": {
+          "pt_BR": "Usuário responsável pelo negócio",
+          "en": "User owner that is responsable for this deal"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "value",
+        "name": {
+          "pt_BR": "Valor",
+          "en": "Value"
+        },
+        "description": {
+          "pt_BR": "Valor do negócio em R$",
+          "en": "Deal value in R$"
+        },
+        "field_type": "string"
+      }
+    ]
+  }, 
+  "trigger_type": "polling",
+  "base_datetime_filter": ["updatedAt"],
+  "request": {
+    "method_name": "/deals",
+    "params": {"order_by": 8, "dealStatus": "2"}
+  } 
+}

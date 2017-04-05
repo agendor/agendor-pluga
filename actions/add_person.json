@@ -1,0 +1,71 @@
+{
+  "name": {
+    "pt_BR": "Criar Pessoa", 
+    "en": "Add Person"
+  },
+  "action_key": "add_person",
+  "description": {
+    "pt_BR": "Criar uma nova Pessoa",
+    "en": "Add a new Person"
+  },
+  "action_fields": {
+    "fields": [
+      {
+        "key": "name",
+        "name": {"pt_BR": "nome", "en": "name"},
+        "description": {
+          "pt_BR": "Nome da pessoa.",
+          "en": "Person's name"
+        },
+        "required": true,
+        "visible": true,
+        "field_type": "string",
+        "data_type": "string",
+        "max": "60"
+      },
+      {
+        "key": "organization",
+        "name": {"pt_BR": "empresa", "en": "organization"},
+        "description": {
+          "pt_BR": "Nome da empresa que a pessoa pertence",
+          "en": "Organization name which the person belongs to"
+        },
+        "required": false,
+        "visible": true,
+        "field_type": "string",
+        "data_type": "string",
+        "max": 150
+      },
+      {
+        "key": "emails",
+        "name": {"pt_BR": "email", "en": "email"},
+        "description": {
+          "pt_BR": "Email da pessoa",
+          "en": "Person's email"
+        },
+        "required": false,
+        "visible": true,
+        "field_type": "custom",
+        "data_type": "array",
+        "max": 100
+      },
+      {
+        "key": "phones",
+        "name": {"pt_BR": "telefones", "en": "phones"},
+        "description": {
+          "pt_BR": "Telefones da pessoa",
+          "en": "Person's phones"
+        },
+        "required": false,
+        "visible": true,
+        "field_type": "custom_textarea",
+        "data_type": "string"
+      }
+    ]
+  },
+  "request": {
+    "method_name": "/people",
+    "error_fields": ["type", "message"],
+    "json_api": true
+  }
+}

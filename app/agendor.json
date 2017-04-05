@@ -1,0 +1,23 @@
+{
+  "name": "Agendor",
+  "app_id": "agendor",
+  "color": "#34495e",
+  "description": {
+    "pt_BR":"O Agendor é uma plataforma de aprimoramento em vendas que ajuda milhares de vendedores a alcançarem todo o seu potencial.", 
+      "en": "Agendor is a sales improvement platform for long sales cycle companies."},
+  "website": "https://www.agendor.com.br/",
+  "signup_url": "https://web.agendor.com.br/cadastro/",
+  "api_base_uri": {
+    "production": {"uri": "https://api.agendor.com.br/v1", "label": "Produção", "default": true}
+  },
+  "authentication": {
+    "ping_request": {
+      "method_name": "/people",
+      "params": {"limit": 1}
+    },
+    "type": "pass_through_header", 
+    "fields": [
+      {"name": "api_key", "label": "Token", "mapping": "Authorization", "prefix": "Token", "type": "text", "validations": [{"name": "min_length", "value": 10}]}
+    ]
+  }
+}

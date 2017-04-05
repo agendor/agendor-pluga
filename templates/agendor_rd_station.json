@@ -1,0 +1,20 @@
+{
+  "app_source": "agendor",
+  "app_target": "rd_station",
+  "filters": [[]],
+  "mapper": [
+  ],
+  "trigger_key": "deal_won",
+  "action_key": "create_lead",
+  "name": {"pt_BR": "Para cada negócio ganho no Agendor, é criado ou atualizado o lead no RD que possui aquele e-mail.",
+            "en": "For deal won on Agendor, a lead is created or updated on RD Station based on its e-mail"},
+  "description": {
+    "why_integrate": [{"pt_BR": "Se você quer segmentar sua base de leads para montar estratégias mais eficazes, é preciso diferenciar leads que já compraram dos que ainda não. Essa integração ajuda exatamente nisso. Ela facilita o trabalho de vendas e marketing em conjunto.",
+                    "en": "If you want to have a lead segmentation to be used on your marketing strategies, you will need to separate those leads that already became customers from those who didn't. This automation helps you on this. It improves the communication between sales and marketing."}],
+    "how_it_works": [{"pt_BR": "A Pluga fica de olho em cada novo negócio marcado no seu CRM, no caso o Agendor.",
+                    "en": "Pluga keeps an eye on every deal won on your preferred CRM; in this case, Agendor."},
+                    {"pt_BR": "Quando um negócio for marcado como ganho, nós informamos essa mudança, de maneira segura, ao RD Station.",
+                    "en": "When deal is set as won, we share your client's information in a secure way with RD Station."},
+                    {"pt_BR": "RD Station create a new conversion in sale for this lead and update its category to customer."}]
+  }
+}
